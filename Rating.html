@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <style>
+      .card {
+        background-color: orange;
+        padding: 20px;
+        border-radius: 5px;
+        color: white;
+        max-width: min-content;
+      }
+      label {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <u><b>Feedback Form:</b></u>
+    </h1>
+
+    <div class="card">
+      <form id="feedbackForm">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div>
+          <label for="rating">Rating:</label>
+          <select id="rating" name="rating" required>
+            <option value="" selected disabled>Select rating</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      // Function to handle form submission
+      function handleSubmit(event) {
+        event.preventDefault(); // Prevent form from submitting
+
+        // Get form data
+        const formData = new FormData(event.target);
+        const name = formData.get("name");
+        const rating = formData.get("rating");
+        const feedback = formData.get("feedback");
+
+        // Store the data (You can customize this part as per your requirements)
+        // For this example, we will simply log the data to the console
+        console.log("Name:", name);
+        console.log("Rating:", rating);
+        console.log("Feedback:", feedback);
+
+        // Reset the form after submission
+        event.target.reset();
+      }
+
+      // Attach event listener to the form
+      const feedbackForm = document.getElementById("feedbackForm");
+      feedbackForm.addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>
