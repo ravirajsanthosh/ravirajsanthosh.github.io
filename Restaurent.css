@@ -39,13 +39,22 @@ li{
     font-family:"roboto";
     font-size: 3em;
     font-weight: 300;
-    color: white;
+    color: rgb(15, 176, 240);
+  -webkit-text-stroke: 1px #0d2436; /* outline */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* depth */
 }
 
 .hero-p{
     font-family:"roboto";
     font-size: 1.5em;
-    color: #f5f7fa;
+    color: #11be25;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* depth */
+    font-weight: 500;
+
+     background-color: rgba(245, 247, 250, 0.7); /* light tint */
+    display: inline-block;   /* background only behind text */
+    padding: 4px 8px;        /* optional spacing */
+    border-radius: 6px;      /* rounded edges for style */
 }
 
 .menu-btn{
@@ -88,9 +97,15 @@ li{
     border-radius: 16px;
 }
 
-.wcu-card-image{
-    width: 87px;
-    height: 90px;
+
+.wcu-card-image {
+    width: 137px;
+    height: 120px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: #f9fbfe;
+    object-fit: cover;   /* keeps aspect ratio, fills circle */
 }
 
 .wcu-card-title {
@@ -120,6 +135,14 @@ li{
 }
 .menu-item-image{
     border-radius:16px ;
+     height: 200px; /* fixed image height */
+      width: 100%;
+     object-fit: cover; /* maintain aspect ratio, cover area */
+    margin-bottom: 12px;
+    transition: transform 0.3s ease; /* smooth zoom */
+    &:hover {
+        transform: scale(1.05); /* zoom in */
+    }
 }
 .menu-item-card{
     border-radius:26px ;
@@ -212,6 +235,10 @@ p{
   font-weight: 800;
 }
 
+.thanking-customers-section-img {
+  margin-right: 200px; /* adjust as needed */
+}
+
 .custom-button {
   color: white;
   background-image: linear-gradient(#d0b200, #a58d00);
@@ -220,6 +247,4 @@ p{
   border-width: 0;
   border-radius: 8px;
   margin-right: 10px;
-
 }
-
